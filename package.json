@@ -1,0 +1,19 @@
+{ "name": "shmeck"
+, "description": "A web framework"
+, "version": "0.0.1"
+, "author": "Bruno Barreto <mail@brunex.name>"
+, "engines": ["node >= 0.6.3"]
+, "main": "./lib/index.js"
+, "devDependencies": {
+    "coffee-script": "latest",
+    "express": "latest",
+    "jade": "latest",
+    "stylus":"latest",
+    "nib":"latest",
+    "stitch":"latest"
+  }
+, "repository": {
+    "type" : "git"
+  , "url" : "https://github.com/NeCkEr/shmeck.git"
+  }
+}

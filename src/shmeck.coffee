@@ -1,7 +1,7 @@
 express       = require "express"
 stylus        = require "stylus"
 nib           = require "nib"
-jade_browser  = require "../my_node_modules/jade-browser"
+jade_browser  = require "jadebrowser"
 stitch        = require "stitch"
 
 

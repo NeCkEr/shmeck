@@ -6,7 +6,7 @@
 , "main": "./lib/index.js"
 , "devDependencies": {
     "coffee-script": "latest",
-    "express": "latest",
+    "express": "3.0.0rc4",
     "jade": "latest",
     "stylus":"latest",
     "nib":"latest",

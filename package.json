@@ -1,10 +1,10 @@
 { "name": "shmeck"
 , "description": "A web framework"
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "author": "Bruno Barreto <mail@brunex.name>"
 , "engines": ["node >= 0.6.3"]
 , "main": "./lib/index.js"
-, "devDependencies": {
+, "Dependencies": {
     "coffee-script": "latest",
     "express": "3.0.0rc4",
     "jade": "latest",

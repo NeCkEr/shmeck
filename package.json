@@ -1,6 +1,6 @@
 { "name": "shmeck"
 , "description": "A web framework"
-, "version": "0.0.4"
+, "version": "0.0.5"
 , "author": "Bruno Barreto <mail@brunex.name>"
 , "engines": ["node >= 0.6.3"]
 , "main": "./lib/index.js"

@@ -9,28 +9,30 @@ module.exports = (options) =>
   server = express()
 
   server.use stylus.middleware
-    src: options.appRoot + "/site"
-    dest: options.appRoot + "/public"
+    src: options.appRoot 
+    dest: options.publicDir
     compile: (str, path) ->
       return stylus(str).set('filename', path).use(nib())
 
-  #client JadeTemplates
-  server.use(jade_browser('/clientAppTemplates.js', "**", {root:options.appRoot + "/site/clientApp"}));
+  #client views (JadeTemplates)
+  for app in options.clientApps
+    server.use(jade_browser(app.templatesUrl, "**", {root:app.localPath}));
 
 
-  #Client JS 
-  stitchPackageSite = stitch.createPackage
-    paths: [options.appRoot + '/site/clientApp']
+    #Client JS
+    stitchPackageSite = stitch.createPackage
+      paths: [app.localPath]
+      
+    server.get(app.appUrl, stitchPackageSite.createServer());
+  
 
-  server.get('/app.js', stitchPackageSite.createServer());
-
+  #ServerSide views
   server.set('view engine', 'jade')
-  server.set('views', options.appRoot + '/site' )
+  server.set('views', options.appRoot)
 
-  server.use(express.static(options.appRoot + '/public'))
 
-  server.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + "/upload" }))
-  server.use(express.cookieParser("cookie secret!"))
-  server.use(server.router)
+  #Serve static as public dir
+  server.use(express.static(options.publicDir))
 
+  server.express = express
   return server

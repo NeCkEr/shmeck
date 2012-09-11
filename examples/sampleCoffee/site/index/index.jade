@@ -1,0 +1,15 @@
+extends ../layout
+
+block append head
+  link(rel="stylesheet", href="stylesheets/main.css")
+
+block append scripts
+  script(src="/javascript/underscore-min.js")
+  script(src="/javascript/backbone-min.js")
+  script(src="/jsClient.js")
+  script(src="/jsClientTemplates.js")
+  script
+    require("main");
+
+block content
+  h3#teste teste

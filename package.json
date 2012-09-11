@@ -1,16 +1,19 @@
 { "name": "shmeck"
 , "description": "A web framework"
-, "version": "0.0.5"
+, "version": "0.0.6"
 , "author": "Bruno Barreto <mail@brunex.name>"
 , "engines": ["node >= 0.6.3"]
 , "main": "./lib/index.js"
 , "dependencies": {
+
     "coffee-script": "latest",
     "express": "3.0.0rc4",
     "jade": "latest",
     "stylus":"latest",
     "nib":"latest",
-    "stitch":"latest"
+    "stitch":"latest",
+    "jade-browser":"latest"
+
   }
 , "repository": {
     "type" : "git"
